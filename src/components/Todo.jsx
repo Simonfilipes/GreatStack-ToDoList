@@ -51,7 +51,7 @@ JSON.parse(localStorage.getItem("todos")) : [] );
 
   return (
     <div className='bg-white place-self-center w-11/12 
-    max-w-md flex flex-col p-7 min-h-[550px] rounded-xl'>
+    max-w-md flex flex-col p-4 min-h-[550px] rounded-xl min-w-[350px]'>
 
         {/* -------- title ------- */}
 
@@ -66,7 +66,12 @@ JSON.parse(localStorage.getItem("todos")) : [] );
         rounded-full'>
             <input ref={inputRef} className='bg-transparent border-0 outline-none
             flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600'
-            type="text" placeholder='Add Your Task' />
+            type="text" placeholder='Add Your Task' 
+            onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    add();
+                }
+            }} />
             <button onClick={add} className='border-none rounded-full
             bg-orange-600 w-32 h-14 text-white text-lg
             font-medium cursor-pointer'>ADD +</button>
