@@ -41,8 +41,8 @@ const Todo = () => {
   };
 
   const deleteTodo = (id) => {
-    setTodoList((prvTodos) => {
-      return prvTodos.filter((todo) => todo.id !== id);
+    setTodoList((prvoTodos) => {
+      return prvoTodos.filter((todo) => todo.id !== id);
     });
   };
 
